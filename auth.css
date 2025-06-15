@@ -1,0 +1,99 @@
+.auth-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--light-text);
+}
+
+.tab-btn.active {
+    border-bottom: 3px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+.phone-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.phone-input select {
+    width: 100px;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.phone-input input {
+    flex: 1;
+}
+
+.otp-group {
+    margin-top: 1.5rem;
+}
+
+.otp-input {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.otp-input input {
+    width: 40px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.otp-timer {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--light-text);
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media (max-width: 480px) {
+    .phone-input {
+        flex-direction: column;
+    }
+    
+    .phone-input select {
+        width: 100%;
+    }
+    
+    .otp-input input {
+        width: 35px;
+        height: 45px;
+    }
+}
