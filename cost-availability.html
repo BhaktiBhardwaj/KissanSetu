@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Availability - KissanSetu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/availability.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1>KissanSetu</h1></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="crop-prices.html">Crop Prices</a></li>
+                    <li><a href="cost-availability.html" class="active">Cost & Availability</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li class="dropdown">
+                        <a href="#">Languages <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">Hindi</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="login.html" class="btn btn-outline">Login</a></li>
+                    <li><a href="signup.html" class="btn btn-primary">Sign Up</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="availability-section">
+        <div class="container">
+            <h1>Crop Availability Dashboard</h1>
+            <p class="subtitle">Real-time availability and demand statistics for agricultural products</p>
+            
+            <div class="availability-filters">
+                <div class="search-box">
+                    <input type="text" placeholder="Search crops...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="category-filter">
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="grains">Grains</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="fruits">Fruits</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="stats-summary">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Products Listed</h3>
+                        <span class="stat-value" id="totalProducts">0</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Available Quantity</h3>
+                        <span class="stat-value" id="totalQuantity">0 kg</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Average Price</h3>
+                        <span class="stat-value" id="avgPrice">₹0/kg</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Active Sellers</h3>
+                        <span class="stat-value" id="activeSellers">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="availability-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Crop</th>
+                            <th>Category</th>
+                            <th>Listings</th>
+                            <th>Available Qty</th>
+                            <th>Avg Price</th>
+                            <th>Demand</th>
+                            <th>View Listings</th>
+                        </tr>
+                    </thead>
+                    <tbody id="availabilityData">
+                       
+                    </tbody>
+                </table>
+            </div>
+            
+    </section> 
+<footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>KissanSetu</h3>
+                    <p>Empowering farmers with fair crop pricing and transparent market access.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="crop-prices.html">Crop Prices</a></li>
+                        <li><a href="cost-availability.html">Cost & Availability</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Languages</h4>
+                    <ul>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Hindi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KissanSetu. Built for farmers, by developers who care.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="js/availability.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

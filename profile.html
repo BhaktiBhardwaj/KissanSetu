@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - KissanSetu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1>KissanSetu</h1></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="crop-prices.html">Marketplace</a></li>
+                    <li><a href="orders.html">My Orders</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="logout.html" class="btn btn-outline">Logout</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="images/default-avatar.jpg" alt="Profile" id="profileImage">
+                    <button class="btn-upload" id="uploadImageBtn">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                </div>
+                <div class="profile-info">
+                    <h1 id="profileName">Loading...</h1>
+                    <p class="profile-location" id="profileLocation"></p>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="listingsCount">0</span>
+                            <span class="stat-label">Listings</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="ordersCount">0</span>
+                            <span class="stat-label">Orders</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="ratingValue">0.0</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-tabs">
+                <button class="tab-btn active" data-tab="details">Profile Details</button>
+                <button class="tab-btn" data-tab="listings">My Listings</button>
+                <button class="tab-btn" data-tab="orders">Order History</button>
+            </div>
+
+            <div class="tab-content active" id="detailsTab">
+                <form id="profileForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editName">Full Name</label>
+                            <input type="text" id="editName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEmail">Email</label>
+                            <input type="email" id="editEmail" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editPhone">Phone Number</label>
+                            <input type="tel" id="editPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editLocation">Farm Location</label>
+                            <input type="text" id="editLocation" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="editCrops">Main Crops Grown</label>
+                        <input type="text" id="editCrops">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editFarmSize">Farm Size (acres)</label>
+                            <input type="number" id="editFarmSize">
+                        </div>
+                        <div class="form-group">
+                            <label for="editExperience">Farming Experience</label>
+                            <select id="editExperience">
+                                <option value="0-5">0-5 years</option>
+                                <option value="5-10">5-10 years</option>
+                                <option value="10+">10+ years</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+
+            <div class="tab-content" id="listingsTab">
+                <div class="listings-grid" id="userListings">
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-seedling"></i>
+                        <h3>No Listings Yet</h3>
+                        <p>You haven't created any crop listings yet</p>
+                        <a href="crop-prices.html" class="btn btn-primary">Create Listing</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="ordersTab">
+                <div class="orders-list" id="userOrders">
+                    
+                    <div class="empty-state">
+                        <i class="fas fa-shopping-basket"></i>
+                        <h3>No Orders Yet</h3>
+                        <p>You haven't placed any orders yet</p>
+                        <a href="crop-prices.html" class="btn btn-primary">Browse Marketplace</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        
+    </footer>
+
+    <script src="js/profile.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

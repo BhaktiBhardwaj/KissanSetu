@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="listingTitle">Crop Listing - KissanSetu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/listing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        
+    </header>
+
+    <section class="listing-section">
+        <div class="container">
+            <div class="listing-container">
+                <div class="listing-images">
+                    <div class="main-image">
+                        <img id="mainListingImage" src="images/wheat.jpg" alt="Crop Image">
+                    </div>
+                </div>
+                
+                <div class="listing-details">
+                    <h1 id="listingCropName">Wheat</h1>
+                    <div class="seller-info">
+                        <span>Listed by: <strong id="listingSeller">Rajesh Kumar</strong></span>
+                        <span class="rating"><i class="fas fa-star"></i> 4.5 </span>
+                    </div>
+                    
+                    <div class="price-section">
+                        <span class="price" id="listingPrice">₹22/kg</span>
+                        <span class="quantity" id="listingQuantity">Available: 500kg</span>
+                    </div>
+                    
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="listingLocation">Meerut, Uttar Pradesh</span>
+                    </div>
+                    
+                    <div class="description">
+                        <h3>Description</h3>
+                        <p id="listingDescription">High quality wheat harvested this season. Organically grown with no chemical fertilizers. Moisture content below 12%. Available for immediate delivery.</p>
+                    </div>
+                    
+                    <div class="buy-section">
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="decreaseQty">-</button>
+                            <input type="number" id="orderQty" value="1" min="1">
+                            <button class="qty-btn" id="increaseQty">+</button>
+                            <span>kg</span>
+                        </div>
+                        <button class="btn btn-primary btn-block" id="addToCartBtn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <button class="btn btn-outline btn-block" id="buyNowBtn">
+                            Buy Now
+                        </button>
+                    </div>
+                    
+                    <div class="delivery-info">
+                        <div class="delivery-option">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <strong>Delivery Options</strong>
+                                <p>Seller delivers (within 50km) or pickup available</p>
+                            </div>
+                        </div>
+                        <div class="delivery-option">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <strong>KissanSetu Guarantee</strong>
+                                <p>Quality assurance and secure payments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="listing-tabs">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="details">Product Details</button>
+                    <button class="tab-btn" data-tab="seller">Seller Information</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews</button>
+                </div>
+                
+                <div class="tab-content active" id="detailsTab">
+                    <h3>Product Specifications</h3>
+                    <table>
+                        <tr>
+                            <th>Crop Type</th>
+                            <td id="listingType">Wheat</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="tab-content" id="sellerTab">
+                    <h3>About the Seller</h3>
+                    <div class="seller-profile">
+                        <div class="seller-basic">
+                            <img src="images/farmer.jpg" alt="Seller">
+                            <div>
+                                <h4 id="sellerName">Rajesh Kumar</h4>
+                                <p>Member since 2025</p>
+                                <div class="seller-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.5 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seller-contact">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-envelope"></i> Send Message
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-phone"></i> Call Seller
+                            </button>
+                        </div>
+                    </div>
+                    <div class="seller-stats">
+                        <div class="stat-item">
+                            <strong>12</strong>
+                            <span>Listings</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>97%</strong>
+                            <span>Positive Ratings</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>1 day</strong>
+                            <span>Avg. Response Time</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="reviewsTab">
+                    <h3>Customer Reviews</h3>
+                    <div class="review-form">
+                        <h4>Write a Review</h4>
+                        <div class="rating-input">
+                            <span>Your Rating:</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <textarea placeholder="Share your experience..."></textarea>
+                        <button class="btn btn-primary">Submit Review</button>
+                    </div>
+                    
+            </div>
+            
+            <div class="similar-listings">
+                <h3>Similar Listings</h3>
+                <div class="listings-grid" id="similarListings">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>KissanSetu</h3>
+                    <p>Empowering farmers with fair crop pricing and transparent market access.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="crop-prices.html">Crop Prices</a></li>
+                        <li><a href="cost-availability.html">Cost & Availability</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Languages</h4>
+                    <ul>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Hindi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KissanSetu. Built for farmers, by developers who care.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/listing.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

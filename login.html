@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - KissanSetu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+    <div class="container">
+        <div class="logo">
+            <a href="index.html"><h1>KissanSetu</h1></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="crop-prices.html">Crop Prices</a></li>
+                <li><a href="cost-availability.html">Cost & Availability</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li class="dropdown">
+                    <a href="#">Languages <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Hindi</a></li>
+                    </ul>
+                </li>
+                <li><a href="login.html" class="btn btn-outline">Login</a></li>
+                <li><a href="signup.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    </header>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="email">Email Login</button>
+                <button class="tab-btn" data-tab="phone">Phone Login</button>
+            </div>
+
+            <!--Email--> 
+            <div class="auth-form active" id="emailForm">
+                <h2>Welcome Back</h2>
+                <p class="auth-subtitle">Sign in with your email</p>
+                
+                <form id="emailLoginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="farmer@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+                    
+                    <button type="button" class="btn btn-social btn-google">
+                        <i class="fab fa-google"></i> Continue with Google
+                    </button>
+                    
+                    <p class="auth-link">Don't have an account? <a href="signup.html">Sign up</a></p>
+                    <p class="auth-link"><a href="forgot-password.html">Forgot password?</a></p>
+                </form>
+            </div>
+
+            <!-- Phone-->
+            <div class="auth-form" id="phoneForm">
+                <h2>Welcome Back</h2>
+                <p class="auth-subtitle">Sign in with your phone number</p>
+                
+                <form id="phoneLoginForm">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <div class="phone-input">
+                            <select id="countryCode">
+                                <option value="+91">+91 (IN)</option>
+                            </select>
+                            <input type="tel" id="phone" placeholder="" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group otp-group hidden">
+                        <label for="otp">Enter OTP</label>
+                        <div class="otp-input">
+                            <input type="text" id="otp1" maxlength="1" pattern="\d">
+                            <input type="text" id="otp2" maxlength="1" pattern="\d">
+                            <input type="text" id="otp3" maxlength="1" pattern="\d">
+                            <input type="text" id="otp4" maxlength="1" pattern="\d">
+                            <input type="text" id="otp5" maxlength="1" pattern="\d">
+                            <input type="text" id="otp6" maxlength="1" pattern="\d">
+                        </div>
+                        <p class="otp-timer hidden">Resend OTP in <span id="countdown">30</span> seconds</p>
+                        <button type="button" id="resendOtp" class="btn btn-link hidden">Resend OTP</button>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block" id="phoneSubmitBtn">
+                        Send OTP
+                    </button>
+                    
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+                    
+                    <button type="button" class="btn btn-social btn-google">
+                        <i class="fab fa-google"></i> Continue with Google
+                    </button>
+                    
+                    <p class="auth-link">Don't have an account? <a href="signup.html">Sign up</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>KissanSetu</h3>
+                    <p>Empowering farmers with fair crop pricing and transparent market access.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="crop-prices.html">Crop Prices</a></li>
+                        <li><a href="cost-availability.html">Cost & Availability</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Languages</h4>
+                    <ul>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Hindi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KissanSetu. Built for farmers, by developers who care.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

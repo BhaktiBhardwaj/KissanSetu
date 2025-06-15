@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Listings - KissanSetu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/listings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1>KissanSetu</h1></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="crop-prices.html" class="active">Crop Prices</a></li>
+                    <li><a href="cost-availability.html">Cost & Availability</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li class="dropdown">
+                        <a href="#">Languages <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">Hindi</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="login.html" class="btn btn-outline">Login</a></li>
+                    <li><a href="signup.html" class="btn btn-primary">Sign Up</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="listings-section">
+        <div class="container">
+            <div class="listings-header">
+                <h1>Marketplace Listings</h1>
+                <button id="addListingBtn" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Add Your Listing
+                </button>
+            </div>
+
+            <div class="search-filter">
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search crops..." value="">
+        <button id="searchBtn"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="filters">
+        <select id="categoryFilter">
+            <option value="">All Categories</option>
+            <option value="grains">Grains</option>
+            <option value="vegetables">Vegetables</option>
+            <option value="fruits">Fruits</option>
+            <option value="spices">Spices</option>
+        </select>
+        <select id="sortFilter">
+            <option value="">Sort By</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="newest">Newest First</option>
+        </select>
+    </div>
+</div>
+
+            <div class="listings-grid" id="listingsContainer">
+                
+            </div>
+        </div>
+    </section>
+
+    
+    <div class="modal" id="addListingModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add New Listing</h2>
+            <form id="listingForm">
+                <div class="form-group">
+                    <label for="cropName">Crop Name*</label>
+                    <input type="text" id="cropName" required>
+                </div>
+                <div class="form-group">
+                    <label for="cropCategory">Category*</label>
+                    <select id="cropCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="grains">Grains</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="spices">Spices</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cropPrice">Price per kg (₹)*</label>
+                    <input type="number" id="cropPrice" required>
+                </div>
+                <div class="form-group">
+                    <label for="cropQuantity">Available Quantity (kg)*</label>
+                    <input type="number" id="cropQuantity" required>
+                </div>
+                <div class="form-group">
+                    <label for="cropLocation">Location*</label>
+                    <input type="text" id="cropLocation" required>
+                </div>
+                <div class="form-group">
+                    <label for="cropDescription">Description*</label>
+                    <textarea id="cropDescription" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="cropImage">Upload Image</label>
+                    <input type="file" id="cropImage" accept="image/*">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Listing</button>
+            </form>
+        </div>
+    </div>
+<footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>KissanSetu</h3>
+                    <p>Empowering farmers with fair crop pricing and transparent market access.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="crop-prices.html">Crop Prices</a></li>
+                        <li><a href="cost-availability.html">Cost & Availability</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Languages</h4>
+                    <ul>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Hindi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KissanSetu. Built for farmers, by developers who care.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/listings.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    const cropParam = urlParams.get('crop');
+    
+    
+    if (categoryParam) {
+        document.getElementById('categoryFilter').value = categoryParam;
+    }
+    
+    if (cropParam) {
+        document.getElementById('searchInput').value = cropParam;
+    }
+    
+    
+    document.getElementById('categoryFilter').addEventListener('change', updateListings);
+    document.getElementById('sortFilter').addEventListener('change', updateListings);
+    document.getElementById('searchBtn').addEventListener('click', updateListings);
+    
+    function updateListings() {
+        const category = document.getElementById('categoryFilter').value;
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const sortBy = document.getElementById('sortFilter').value;
+        
+        
+        displayFilteredListings(category, searchTerm, sortBy);
+    }
+    
+    
+    if (categoryParam || cropParam) {
+        updateListings();
+    }
+</script>
+</body>
+</html>
